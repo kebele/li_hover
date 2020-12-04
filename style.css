@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: green;
+    font-size: 18px;
+}
+.container{
+    padding: 40px;
+    background: rgb(76, 130, 161);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+}
+.container h2{
+    color: black;
+    margin-bottom: 10px;
+    display: inline-block;
+    font-size: 500;
+    border-bottom : 2px solid orangered ;
+}
+.container ul{
+    position: relative;
+}
+.container ul li{
+    position: relative;
+    list-style: none;
+    display: table;
+    margin: 10px 0;
+    padding-left: 34px;
+    padding-right: 5px;
+}
+
+.container ul li::before{
+    content : '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 34px;
+    height: 34px;
+    background: transparent;
+    border-radius: 34px;
+    transition : background 0.3s, width 0.3s;
+    transition-delay: 0.3s, 0s;
+    border : 2px solid #03a9f4;
+    box-sizing: border-box;
+}
+.container ul li:hover::before{
+    width: 100%;
+    background: #03a9f4;
+    transition-delay: 0s, 0.3s;    
+}
+.container ul li::after{
+    content :'';
+    position: absolute;
+    top: 13px;
+    left: 12px;
+    width: 6px;
+    height: 6px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform : rotate(45deg);
+    transition : 0.3s;
+    transition-delay: 0s;
+}
+.container ul li:hover::after{
+    left : 20px;
+    transition-delay: 0.3s;
+    transform : rotate(45deg) scale(1.5);
+    color: crimson;
+}
+.container ul li p{
+    position: relative;
+    z-index : 10;
+    padding : 5px 10px;
+    color : whitesmoke
+}
+.container ul li p:hover{
+    color: black;
+    transition-delay: 0.4s;
+}
